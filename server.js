@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost:27017/helphanddb').then(() => console.log(
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/tasks', taskRoutes);
 
 // Start the server
 app.listen(port, () => {
