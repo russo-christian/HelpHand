@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB TODO: move db to .env file
-mongoose.connect('mongodb://localhost:27017/helphanddb').then(() => console.log('MongoDB Connected'))
+mongoose.connect('mongodb+srv://helphand:helphand@cluster0.9etrtdx.mongodb.net/helphand').then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
 // Routes
