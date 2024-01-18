@@ -7,7 +7,7 @@ const base = `${__dirname}/public`;
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB TODO: move db to .env file
-mongoose.connect('mongodb+srv://<username>:<password>@cluster0.9etrtdx.mongodb.net/helphanddb').then(() => console.log('MongoDB Connected'))
+mongoose.connect('mongodb://localhost:27017/helphanddb').then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
 // Routes
