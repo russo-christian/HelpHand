@@ -1,8 +1,13 @@
+// Create and configure Express
 const express = require("express");
+const app = express();
+app.use(express.json());
+
 const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
+//const taskRoutes = require("./routers/task.router");
 
-const app = express();
+//const app = express();
 const base = `${__dirname}/public`;
 const port = process.env.PORT || 3000;
 
@@ -14,7 +19,7 @@ mongoose
 
 // Routes
 app.use("/api/users", userRoutes);
-app.use('/api/tasks', taskRoutes);
+//app.use('/api/tasks', taskRoutes);
 
 app.use(express.static("public"));
 

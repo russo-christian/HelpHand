@@ -9,6 +9,7 @@ const userController = {
             await newUser.save();
             res.status(201).send(newUser);
         } catch (error) {
+            console.error("Error in createUser:", error);
             res.status(400).send(error);
         }
     },
@@ -60,7 +61,34 @@ const userController = {
         } catch (error) {
             res.status(500).send(error);
         }
+    },
+
+    // Search User by Name
+    getUserByUsername: async (req, res) => {
+        try {
+            const user = await User.findOne({ username: req.params.username })
+            if (!user) {
+                return res.status(404).send();
+            }
+            res.send(user);
+        } catch (error) {
+            res.status(500).send(error);
+        }
+    },
+
+    // Search User by Email
+    getUserByEmail: async (req, res) => {
+        try {
+            const user = await User.findOne({ email: req.params.email })
+            if (!user) {
+                return res.status(404).send();
+            }
+            res.send(user);
+        } catch (error) {
+            res.status(500).send(error);
+        }
     }
+
 };
 
 module.exports = userController;
