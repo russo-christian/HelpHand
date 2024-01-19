@@ -5,7 +5,7 @@ app.use(express.json());
 
 const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
-//const taskRoutes = require("./routers/task.router");
+const taskRoutes = require("./routers/task.router");
 
 //const app = express();
 const base = `${__dirname}/public`;
@@ -19,7 +19,7 @@ mongoose
 
 // Routes
 app.use("/api/users", userRoutes);
-//app.use('/api/tasks', taskRoutes);
+app.use('/api/tasks', taskRoutes);
 
 app.use(express.static("public"));
 

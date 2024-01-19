@@ -5,9 +5,9 @@ const taskController = {
     // Create a new task
     createTask: async (req, res) => {
         try {
-            const newTask = new task(req.body);
+            const newTask = new Task(req.body);
             await newTask.save();
-            res.status(201).send(newtask);
+            res.status(201).send(newTask);
         } catch (error) {
             res.status(400).send(error);
         }
@@ -16,22 +16,23 @@ const taskController = {
     // Retrieve a task by id
     getTaskById: async (req, res) => {
         try {
-            const task = await task.findById(req.params.id);
+            console.log(req.params.id);
+            const task = await Task.findById(req.params.id);
             if (!task) {
-                return res.status(404).send();
+                return res.status(404).send('Task not found');
             }
             res.send(task);
         } catch (error) {
-            res.status(500).send(error);
+            res.status(500).send({ message: error.message, stack: error.stack });
         }
     },
 
     // Update a task by id
     updateTask: async (req, res) => {
         try {
-            const task = await task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+            const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
             if (!task) {
-                return res.status(404).send();
+                return res.status(404).send('Task not found');
             }
             res.send(task);
         } catch (error) {
@@ -42,7 +43,7 @@ const taskController = {
     // Delete a task by id
     deleteTask: async (req, res) => {
         try {
-            const task = await task.findByIdAndDelete(req.params.id);
+            const task = await Task.findByIdAndDelete(req.params.id);
             if (!task) {
                 return res.status(404).send();
             }
@@ -55,7 +56,7 @@ const taskController = {
     // List all tasks
     listTasks: async (req, res) => {
         try {
-            const tasks = await task.find({});
+            const tasks = await Task.find({});
             res.send(tasks);
         } catch (error) {
             res.status(500).send(error);
