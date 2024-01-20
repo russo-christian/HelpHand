@@ -17,7 +17,11 @@ describe('User API Tests', () => {
                 password: 'test123',
                 firstName: 'Test',
                 lastName: 'User',
-                dateOfBirth: '1990-01-01'
+                dateOfBirth: '1990-01-01',
+                currentRating: 4.5,
+                tasksHelped: 10,
+                admin: false,
+                seeker: false
             };
     
             chai.request(server)
@@ -98,7 +102,9 @@ describe('User API Tests', () => {
         it('should update a user by id', (done) => {
             const updateData = {
                 firstName: 'UpdatedName',
-                lastName: 'UpdatedLastName'
+                lastName: 'UpdatedLastName',
+                tasksHelped: 11,
+                seeker: true
             };
     
             chai.request(server)
@@ -110,7 +116,8 @@ describe('User API Tests', () => {
                     expect(res.body).to.have.property('_id', createdUserId);
                     expect(res.body).to.have.property('firstName', updateData.firstName);
                     expect(res.body).to.have.property('lastName', updateData.lastName);
-                    // Add more assertions as needed
+                    expect(res.body).to.have.property('tasksHelped', updateData.tasksHelped);
+                    expect(res.body).to.have.property('seeker', updateData.seeker);
                     done();
                 });
         });
