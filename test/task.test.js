@@ -48,7 +48,6 @@ describe('Task API Tests', () => {
         });
     });
 
-    console.log('Test Id: ', createdTaskId);
     // Test for task id search
     describe('GET /api/tasks/:id', () => {
         it('should retrieve a task by id', (done) => {
@@ -63,4 +62,41 @@ describe('Task API Tests', () => {
         });
     });
     
+    // Test for task update
+    describe('PUT /api/tasks/:id', () => {
+      it('should update a task by id', (done) => {
+          const updatedTaskData = {
+              description: 'Updated task description',
+              pay: '$20.00'
+          };
+  
+          chai.request(server)
+              .put(`/api/tasks/${createdTaskId}`)
+              .send(updatedTaskData)
+              .end((err, res) => {
+                  expect(res).to.have.status(200);
+                  expect(res.body).to.be.an('object');
+                  expect(res.body).to.have.property('_id', createdTaskId);
+                  expect(res.body).to.have.property('description', updatedTaskData.description);
+                  expect(res.body).to.have.property('pay', updatedTaskData.pay);
+                  done();
+              });
+      });
+  });
+
+    // Test for task delete
+    describe('DELETE /api/tasks/:id', () => {
+      it('should delete a task by id', (done) => {
+          chai.request(server)
+              .delete(`/api/tasks/${createdTaskId}`)
+              .end((err, res) => {
+                  expect(res).to.have.status(200);
+                  expect(res.body).to.be.an('object');
+                  expect(res.body).to.have.property('_id', createdTaskId);
+                  chai.request(server).get(`/api/tasks/${createdTaskId}`).end(/* ... */);
+                  done();
+              });
+      });
+  });
+
 });

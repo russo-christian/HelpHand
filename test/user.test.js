@@ -92,5 +92,43 @@ describe('User API Tests', () => {
                 });
         });
     });
+
+    // Test for user update
+    describe('PUT /api/users/:id', () => {
+        it('should update a user by id', (done) => {
+            const updateData = {
+                firstName: 'UpdatedName',
+                lastName: 'UpdatedLastName'
+            };
     
+            chai.request(server)
+                .put(`/api/users/${createdUserId}`)
+                .send(updateData)
+                .end((err, res) => {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.an('object');
+                    expect(res.body).to.have.property('_id', createdUserId);
+                    expect(res.body).to.have.property('firstName', updateData.firstName);
+                    expect(res.body).to.have.property('lastName', updateData.lastName);
+                    // Add more assertions as needed
+                    done();
+                });
+        });
+    });
+
+    // Test for user delete
+    describe('DELETE /api/users/:id', () => {
+        it('should delete a user by id', (done) => {
+            chai.request(server)
+                .delete(`/api/users/${createdUserId}`)
+                .end((err, res) => {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.an('object');
+                    expect(res.body).to.have.property('_id', createdUserId);
+                    chai.request(server).get(`/api/users/${createdUserId}`).end(/* ... */);
+                    done();
+                });
+        });
+    });
+
 });
