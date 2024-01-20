@@ -12,5 +12,4 @@ router.get('/', userController.listUsers);
 router.get('/search/username/:username', userController.getUserByUsername);
 router.get('/search/email/:email', userController.getUserByEmail);
 
-
 module.exports = router;
