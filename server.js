@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Create and configure Express
 const express = require("express");
 const app = express();
@@ -9,11 +11,12 @@ const taskRoutes = require("./routers/task.router");
 
 //const app = express();
 const base = `${__dirname}/public`;
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
+const dbUri = process.env.DB_URI;
 
-// Connect to MongoDB TODO: move db to .env file
+// Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/helphanddb")
+  .connect(dbUri)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
