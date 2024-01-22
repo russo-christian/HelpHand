@@ -1,7 +1,10 @@
-require("dotenv").config();
+const express = require('express');
+const mongoose = require('mongoose');
+const userRoutes = require('./routers/user.router');
 
 // Create and configure Express
 const express = require("express");
+
 const app = express();
 app.use(express.json());
 
@@ -9,7 +12,6 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
 const taskRoutes = require("./routers/task.router");
 
-//const app = express();
 const base = `${__dirname}/public`;
 const port = process.env.PORT;
 const dbUri = process.env.DB_URI;
