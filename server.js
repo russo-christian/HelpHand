@@ -38,6 +38,19 @@ app.get("/Helper", (req, res) => {
   res.sendFile(`${base}/views/Helper.html`);
 });
 
+app.get("/profile", (req, res) => {
+  res.sendFile(`${base}/views/profile.html`);
+});
+
+app.get("/task", (req, res) => {
+  res.sendFile(`${base}/views/Task.html`);
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -210,6 +210,27 @@ canvas {
   font-size: 16.24px;
   color: var(--color-gray-100);
 }
+/* .taskes-revolving-icon {
+  position: absolute;
+  top: 1309px;
+  left: 45px;
+  border-radius: 37px;
+  width: 843px;
+  height: 604px;
+  overflow: hidden;
+}
+
+.taskes-revolving-icon1 {
+  position: relative;
+  z-index: 2;
+  top: 1309px;
+  left: 45px;
+  border-radius: 37px;
+  width: 400;
+  height: 300px;
+  overflow: hidden;
+} */
+
 .taskes-revolving-icon {
   position: absolute;
   top: 1309px;
@@ -219,6 +240,19 @@ canvas {
   height: 604px;
   overflow: hidden;
 }
+
+.taskes-revolving-icon1 {
+  position: absolute;
+  z-index: 2;
+  top: 1450px;
+  left: 215px; 
+  border-radius: 30px;
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+
+
 .rectangle {
   width: 100%;
   top: 0;
