@@ -1,28 +1,45 @@
+require("dotenv").config();
+
+// Create and configure Express
 const express = require("express");
+const app = express();
+app.use(express.json());
+
 const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
+const taskRoutes = require("./routers/task.router");
 
-const app = express();
-const port = process.env.PORT || 3000;
+//const app = express();
+const base = `${__dirname}/public`;
+const port = process.env.PORT;
+const dbUri = process.env.DB_URI;
 
-// Connect to MongoDB TODO: move db to .env file
+// Connect to MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/helphanddb")
+  .connect(dbUri)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
-
 // Routes
 app.use("/api/users", userRoutes);
+app.use("/api/tasks", taskRoutes);
 
-// Serve the login page
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile(`${base}/index.html`);
+});
+
+app.get("/Howitworks", (req, res) => {
+  res.sendFile(`${base}/views/Aboutpage.html`);
+});
+
+app.get("/Helper", (req, res) => {
+  res.sendFile(`${base}/views/Helper.html`);
+});
+
 app.get("/login", (req, res) => {
-  // You can render your login page here or serve an HTML file
-  res.sendFile(__dirname + "/views/login.html");
+  res.sendFile(`${base}/views/login.html`);
 });
 
 // Start the server
@@ -30,4 +47,5 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+console.log(port);
 module.exports = app;

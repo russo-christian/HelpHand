@@ -42,5 +42,12 @@ cd HelpHand
 npm install
 ```
 
-### 3. TBD
+### 3. Setup .env file
 
+Create a .env file in your directory and insert the following lines:
+
+```
+DB_URI=mongodb+srv://helphand:<password>@cluster0.9etrtdx.mongodb.net/helphand
+PORT=3000
+```
+Ensure to replace password with the HelpHand DB password

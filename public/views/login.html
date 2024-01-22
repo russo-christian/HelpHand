@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Sign Up Form</title>
+    <link rel="stylesheet" href="css/loginStyles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-section">
+        <div class="logo">Logo</div>
+        <div class="title">
+          <p class="sub-title">UNLEASH THE POWER</p>
+          <h1 class="main-title">HELP HAND</h1>
+        </div>
+      </div>
+      <div class="main-section">
+        <!-- Create Account Form -->
+        <form class="form register-form">
+          <h2>Create Account</h2>
+          <div class="double-input">
+            <input
+              type="text"
+              id="register-first-name"
+              placeholder="First Name"
+            />
+            <input
+              type="text"
+              id="register-last-name"
+              placeholder="Last Name"
+            />
+          </div>
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Password"
+          />
+          <input type="email" id="register-email" placeholder="Email" />
+          <button class="button" id="register-button" type="button">
+            REGISTER
+          </button>
+        </form>
+
+        <!-- Login Form -->
+        <form class="form login-form">
+          <h2>Login Into Account</h2>
+          <input type="text" id="login-email" placeholder="Email" />
+          <input type="password" id="login-password" placeholder="Password" />
+          <div class="right-btn">
+            <button class="button" id="login-button" type="button">
+              LOGIN
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="background-color"></div>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <div class="circle circle5"></div>
+
+    <script src="../js/register.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>
