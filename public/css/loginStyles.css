@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 50px;
+  border: 1px solid red;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  flex: 2;
+  text-align: left;
+  padding: 10px;
+}
+
+.title {
+  margin-top: 25px;
+  flex: 3;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub-title {
+  letter-spacing: 15px;
+  font-size: 24px;
+}
+.main-title {
+  font-size: 72px;
+}
+
+.main-section {
+  display: flex;
+  align-items: top;
+  gap: 200px;
+}
+
+.form {
+  flex: 1;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  text-align: center;
+  font: 24px;
+  gap: 25px;
+  /* border: 1px solid red; */
+}
+.form h2 {
+  font-size: 48px;
+}
+.double-input {
+  display: flex;
+  justify-content: stretch;
+  gap: 20px;
+}
+.double-input input {
+  flex: 1;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"],
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  background-color: transparent;
+  border-radius: 15px;
+  line-height: 48px;
+  font-size: 24px;
+}
+.login-form .right-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.button {
+  max-width: 250px;
+  border: none;
+  border-radius: 5px;
+  background-color: #68c4ba;
+  color: white;
+  cursor: pointer;
+  line-height: 48px;
+  font-size: 24px;
+  padding: 0 30px;
+}
+
+/* Background shapes */
+.background-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e6f1f5;
+  z-index: -2;
+}
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #5cb85c;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.circle1 {
+  background-image: linear-gradient(#9ae0d3, #35a7a0);
+  width: 100px;
+  height: 100px;
+  top: 15%;
+  left: -70px;
+}
+
+.circle2 {
+  background-color: #6dc7bd;
+  width: 50px;
+  height: 50px;
+  bottom: 2%;
+  right: calc(5% + 65px);
+}
+
+.circle3 {
+  background-image: linear-gradient(#dff3ff, #5fb6d3);
+  width: 180px;
+  height: 180px;
+  top: -5%;
+  right: 5%;
+}
+
+.circle4 {
+  background-image: linear-gradient(#d8e6ef, #b4d8e4);
+  width: 180px;
+  height: 180px;
+  bottom: -5%;
+  left: -5%;
+}
+.circle5 {
+  background-image: linear-gradient(#d8e6ef, #b4d8e4);
+  width: 1400px;
+  height: 1400px;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    padding: 30px;
+  }
+
+  .main-section {
+    gap: 100px;
+  }
+
+  .form h2 {
+    font-size: 36px;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+  body,
+  html {
+    overflow: auto;
+  }
+
+  .container {
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .top-section,
+  .main-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo,
+  .title,
+  .form {
+    width: 100%;
+  }
+
+  .double-input {
+    flex-direction: column;
+  }
+
+  .form h2 {
+    font-size: 32px;
+  }
+
+  .button {
+    font-size: 18px;
+    padding: 0 15px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    font-size: 18px;
+    padding: 8px;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+  /* Further adjustments for smaller screens */
+  .form h2 {
+    font-size: 28px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+}
