@@ -1,10 +1,8 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const userRoutes = require('./routers/user.router');
+// Load .env file for variables
+require('dotenv').config();
 
 // Create and configure Express
 const express = require("express");
-
 const app = express();
 app.use(express.json());
 
