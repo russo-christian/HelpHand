@@ -1,3 +1,4 @@
+// Load .env file for variables
 require('dotenv').config();
 
 // Create and configure Express
@@ -9,7 +10,6 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
 const taskRoutes = require("./routers/task.router");
 
-//const app = express();
 const base = `${__dirname}/public`;
 const port = process.env.PORT;
 const dbUri = process.env.DB_URI;
@@ -22,7 +22,7 @@ mongoose
 
 // Routes
 app.use("/api/users", userRoutes);
-app.use('/api/tasks', taskRoutes);
+app.use("/api/tasks", taskRoutes);
 
 app.use(express.static("public"));
 
@@ -51,9 +51,5 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
+console.log(port);
 module.exports = app;
