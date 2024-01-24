@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const result = await response.json();
       if (response.ok) {
         alert("Login successful! Redirecting to homepage.");
-        console.log(localStorage.setItem("token", data));
-        // window.location.href = "/"; // Redirect to the homepage
+        window.location.href = "/"; // Redirect to the homepage
       } else {
         alert("Error: " + result.message);
       }
