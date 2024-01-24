@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   res.sendFile(`${base}/index.html`);
 });
 
+app.get("/login", (req, res) => {
+  res.sendFile(`${base}/views/login.html`);
+});
+
 app.get("/Howitworks", (req, res) => {
   res.sendFile(`${base}/views/Aboutpage.html`);
 });
@@ -46,9 +50,8 @@ app.get("/task", (req, res) => {
   res.sendFile(`${base}/views/Task.html`);
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.get("/login1", (req, res) => {
+  res.sendFile(`${base}/views/login1.html`);
 });
 
 // Start the server

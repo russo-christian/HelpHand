@@ -38,34 +38,29 @@ b:visited {
 .home,
 .messages,
 .my-tasks,
-.notifications,
-.post-a-task {
+.notifications {
   position: absolute;
   top: 20px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: #3b4651;
 }
-.post-a-task {
-  left: 110px;
-}
 .contact,
 .messages,
 .my-tasks,
 .notifications {
-  left: 327px;
+  left: 127px;
 }
 .contact,
 .messages,
 .notifications {
-  left: 495px;
+  left: 295px;
 }
-.messages,
-.notifications {
-  left: 825px;
+.messages {
+  left: 675px;
 }
 .notifications {
-  left: 637px;
+  left: 457px;
 }
 .blank-profile-picture-973460-1-icon {
   position: absolute;
