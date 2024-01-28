@@ -25,7 +25,7 @@
 }
 
 b:hover {
-  color: rgb(158, 150, 150); 
+  color: rgb(158, 150, 150);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -98,7 +98,7 @@ b:visited {
   letter-spacing: -0.04em;
   line-height: 106px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
   width: 627px;
@@ -121,7 +121,7 @@ b:visited {
   align-items: center;
 }
 .get-offers-get-container {
-  top: 263px;
+  top: 303px;
   left: 13px;
   font-size: 24.81px;
   letter-spacing: 0.75em;
@@ -312,7 +312,7 @@ b:visited {
   border-radius: 50%;
   background: linear-gradient(135.94deg, #d8e6ef 8.44%, #b4d8e4), #d9d9d9;
   width: 1421px;
-  height: 1432px;
+  height: 1132px;
 }
 .group-child4 {
   position: absolute;
@@ -392,7 +392,7 @@ b:visited {
   top: 1161px;
   left: -387px;
   width: 1739px;
-  height: 1620px;
+  height: 1320px;
   font-size: var(--font-size-xl);
   color: var(--color-dodgerblue);
 }
@@ -859,8 +859,7 @@ body {
   color: var(--color-whitesmoke-200);
 }
 .earn-money,
-.how-it-works2
- {
+.how-it-works2 {
   position: absolute;
   width: 54.84%;
   top: 4.41px;
@@ -1152,7 +1151,7 @@ body {
   border-radius: 30px;
 }
 
-.group-child4 {
+.group-child44 {
   position: absolute;
   top: 0;
   left: 0;
@@ -1210,4 +1209,25 @@ body {
   height: 112px;
   font-size: var(--font-size-2xs);
   color: var(--color-whitesmoke-200);
+}
+
+.blank-profile-picture-973460-1-icon11 {
+  border-radius: 33px;
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+}
+
+.blank-profile-picture-973460-1-icon11:hover {
+  cursor: pointer;
+  scale: 1.09;
+  transition: 0.5s;
+}
+
+.profile {
+  position: absolute;
+  top: 51px;
+  left: 1039px;
+  width: 107px;
+  height: 40px;
 }

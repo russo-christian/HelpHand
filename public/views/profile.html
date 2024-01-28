@@ -22,11 +22,18 @@
       <b class="contact">Contact</b>
       <b class="messages">Messages</b>
       <b class="notifications">Notifications</b>
-      <img
-        class="blank-profile-picture-973460-1-icon"
-        alt=""
-        src="img/profile.png"
-      />
+      <div class="dropdown">
+        <img
+          id="profile"
+          class="blank-profile-picture-973460-1-icon"
+          alt=""
+          src="img/profile.png"
+        />
+        <div class="dropdown-content">
+          <a href=""><b>Settings</b></a>
+          <a id="logout"><b>logout</b></a>
+        </div>
+      </div>
 
       <div class="profile-management-inner"></div>
       <div class="rectangle-div"></div>
@@ -46,8 +53,7 @@
       />
 
       <div class="user-name">
-        <span class="user-nam">User Nam</span>
-        <span class="e">e</span>
+        <span class="user-nam" id="username">User Nam</span>
       </div>
       <div class="st-albans-vic">st albans Vic, australia</div>
       <div class="rectangle-parent">
@@ -72,13 +78,12 @@
       <img class="edit-246-2-icon" alt="" src="img/edit.png" />
     </div>
 
-    <script>
-      var myTasksText = document.getElementById("myTasksText");
-      if (myTasksText) {
-        myTasksText.addEventListener("click", function (e) {
-          // Please sync "How it works" to the project
-        });
+    <script type="text/javascript">
+      window.history.forward();
+      function noBack() {
+        window.history.forward();
       }
     </script>
+    <script src="js/profile.js"></script>
   </body>
 </html>

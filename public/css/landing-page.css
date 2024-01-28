@@ -1148,3 +1148,16 @@ body {
   font-size: var(--font-size-2xs);
   color: var(--color-whitesmoke-200);
 }
+
+.blank-profile-picture-973460-1-icon1 {
+  border-radius: 33px;
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+}
+
+.blank-profile-picture-973460-1-icon1:hover {
+  cursor: pointer;
+  scale: 1.09;
+  transition: 0.5s;
+}
