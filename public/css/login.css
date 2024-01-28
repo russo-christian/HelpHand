@@ -1,0 +1,424 @@
+.loginsign-up-child {
+  position: absolute;
+  top: 955px;
+  left: -186px;
+  border-radius: 50%;
+  background: linear-gradient(135.94deg, #d8e6ef 8.44%, #b4d8e4);
+  width: 372px;
+  height: 379.4px;
+}
+.loginsign-up-item {
+  position: absolute;
+  top: -173px;
+  left: 454px;
+  border-radius: 50%;
+  background: linear-gradient(135.94deg, #d8e6ef 8.44%, #b4d8e4), #d9d9d9;
+  width: 1421px;
+  height: 1432px;
+}
+.logo-icon {
+  position: absolute;
+  top: 34px;
+  left: 36px;
+  width: 90.07px;
+  height: 90.07px;
+}
+.help-hand,
+.unleash-the-power {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  letter-spacing: -0.04em;
+  line-height: 23.95px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  width: 628px;
+  height: 179px;
+}
+.unleash-the-power {
+  top: 0;
+  font-size: 24.81px;
+  letter-spacing: 0.73em;
+  line-height: 21.15px;
+  font-weight: 500;
+  width: 833.75px;
+  height: 136.94px;
+}
+.pick-the-best {
+  margin: 0;
+}
+.pick-the-best-container1 {
+  width: 100%;
+}
+.pick-the-best-container {
+  position: absolute;
+  top: 247px;
+  left: 5px;
+  font-size: 18.37px;
+  letter-spacing: 0.01em;
+  line-height: 31.24px;
+  font-weight: 500;
+  color: #42454a;
+  display: none;
+  align-items: center;
+  width: 244.38px;
+}
+.help-hand-parent {
+  position: absolute;
+  top: 176px;
+  left: 720px;
+  width: 833.75px;
+  height: 247px;
+  font-size: 114.84px;
+  color: var(--color-black);
+}
+.create-account,
+.login-into-account {
+  position: absolute;
+  top: 433px;
+  left: 71px;
+  font-size: var(--font-size-21xl);
+  letter-spacing: 0.28em;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+.login-into-account {
+  top: 443px;
+  left: 790px;
+  line-height: 31.24px;
+}
+.ellipse-div,
+.loginsign-up-inner {
+  position: absolute;
+  top: -105px;
+  left: 1336px;
+  border-radius: 50%;
+  background: linear-gradient(135.94deg, #dff3ff 8.44%, #9acdde);
+  box-shadow: 9px 59px 90px rgba(131, 196, 220, 0.47);
+  width: 176px;
+  height: 179.5px;
+}
+.ellipse-div {
+  top: -56px;
+  left: 1308px;
+}
+.first-name {
+  position: relative;
+  letter-spacing: 0.28em;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.first-name-wrapper {
+  top: -34px;
+  left: 11px;
+  background: linear-gradient(
+    180deg,
+    rgba(199, 226, 239, 0.8) 50%,
+    rgba(213, 233, 242, 0.8) 13.09%
+  );
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-5xs);
+}
+.email-wrapper,
+.first-name-wrapper,
+.frame-div {
+  position: absolute;
+  box-sizing: border-box;
+}
+.frame-div {
+  top: 569px;
+  left: 57px;
+  width: 294px;
+  height: 65px;
+}
+.email-wrapper {
+  top: -34px;
+  left: 11px;
+  background: linear-gradient(
+    180deg,
+    rgba(199, 226, 239, 0.8) 50%,
+    rgba(213, 233, 242, 0.8) 13.09%
+  );
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-5xs);
+}
+.loginsign-up-inner1 {
+  top: 707px;
+  left: 57px;
+  width: 613px;
+  height: 65px;
+}
+.email-container,
+.loginsign-up-inner1,
+.loginsign-up-inner2 {
+  position: absolute;
+  box-sizing: border-box;
+}
+.email-container {
+  top: -34px;
+  left: 11px;
+  background-color: rgb(206 226 236);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-5xs);
+}
+.loginsign-up-inner2 {
+  top: 569px;
+  left: 863px;
+  width: 613px;
+  height: 65px;
+}
+.password-wrapper {
+  position: absolute;
+  top: -34px;
+  left: 11px;
+  background: linear-gradient(
+    180deg,
+    rgba(199, 226, 239, 0.8) 50%,
+    rgba(213, 233, 242, 0.8) 13.09%
+  );
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-5xs);
+  box-sizing: border-box;
+}
+.loginsign-up-inner3 {
+  position: absolute;
+  top: 853px;
+  left: 57px;
+  border-radius: var(--br-5xs);
+  box-sizing: border-box;
+  width: 613px;
+  height: 65px;
+}
+.password-container {
+  position: absolute;
+  top: -34px;
+  left: 11px;
+  background-color: rgb(206 226 236);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-5xs);
+  box-sizing: border-box;
+}
+.loginsign-up-inner4 {
+  position: absolute;
+  top: 691px;
+  left: 859px;
+  box-sizing: border-box;
+  width: 613px;
+  height: 65px;
+}
+.last-name-wrapper {
+  position: absolute;
+  top: -37px;
+  left: 120px;
+  background-color: rgb(206 226 236);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-5xs);
+}
+.loginsign-up-child1,
+.loginsign-up-inner5,
+.rectangle-div {
+  position: absolute;
+  top: 569px;
+  left: 362px;
+  box-sizing: border-box;
+  width: 308px;
+  height: 65px;
+}
+.loginsign-up-child1,
+.rectangle-div {
+  top: 832px;
+  left: 1306px;
+  background: linear-gradient(196.78deg, #9ae0d3, #35a7a0 96.07%);
+  border: 1.5px solid var(--color-mediumturquoise);
+  border-radius: var(--br-5xs);
+  width: 147px;
+  height: 61px;
+  cursor: pointer;
+}
+.loginsign-up-child1 {
+  top: 964px;
+  left: 65px;
+  width: 163px;
+  height: 53px;
+}
+.login,
+.sign-up {
+  position: absolute;
+  top: 850px;
+  left: 1340px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-aliceblue-100);
+}
+.sign-up {
+  top: 976px;
+  left: 88px;
+}
+.loginsign-up-child2,
+.loginsign-up-child3 {
+  position: absolute;
+  top: 192px;
+  left: -117px;
+  border-radius: 50%;
+  background: radial-gradient(50% 50%at 50% 50%, #9ae0d3, #35a7a0 96.07%);
+  box-shadow: 54px 61px 90px rgba(108, 198, 188, 0.51);
+  width: 217px;
+  height: 220px;
+}
+.loginsign-up-child3 {
+  top: 1017px;
+  left: 1348px;
+}
+.home {
+  left: 348px;
+  color: var(--color-dimgray);
+}
+.browse-tasks,
+.contact,
+.home,
+.how-it-works {
+  position: absolute;
+  top: 74px;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #3b4651;
+}
+.browse-tasks {
+  left: 458px;
+}
+.contact,
+.how-it-works {
+  left: 657px;
+}
+.contact {
+  left: 853px;
+}
+.loginsign-up {
+  width: 100%;
+  position: relative;
+  border-radius: 30px;
+  background: radial-gradient(50% 50%at 50% 50%, #ebf3f5 13.09%, #c5e2f0);
+  border: 4px solid #3a3737;
+  box-sizing: border-box;
+  height: 1166px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+  background-color: #000000;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-size-xl: 20px;
+  --font-size-21xl: 40px;
+
+  /* Colors */
+  --color-dimgray: #596774;
+  --color-aliceblue-100: #eef3f8;
+  --color-mediumturquoise: #68c4ba;
+  --color-gray: #7a797b;
+  --color-black: #000;
+
+  /* Paddings */
+  --padding-5xs: 8px;
+
+  /* Border radiuses */
+  --br-5xs: 8px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: radial-gradient(50% 50%at 50% 50%, #ebf3f5 13.09%, #b5d1df);
+  box-shadow: 0 8px 16px #5f3d3d33;
+  z-index: 1;
+  border: #000000 1px transparent;
+  border-radius: 10px;
+  top: 80px;
+  left: 685px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #3b4651;
+}
+
+.dropdown-content a {
+  color: #111010;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+}
+
+b:hover {
+  color: rgb(158, 150, 150);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+b:visited {
+  color: #3b4651;
+  text-decoration: none;
+}
+
+input {
+  top: 569px;
+  left: 57px;
+  border-radius: var(--br-5xs);
+  border: 1px solid var(--color-gray);
+  width: 294px;
+  height: 62px;
+  font-size: 18.37px;
+  background-color: transparent;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="css/login2.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap"
+    />
+  </head>
+  <body onload="generate()">
+    <div class="loginsign-up">
+      <div class="loginsign-up-child"></div>
+      <div class="loginsign-up-item"></div>
+      <img class="logo-icon" alt="" src="img/logo.svg" />
+
+      <div class="complete-the-application">Complete the Application</div>
+      <div class="loginsign-up-inner"></div>
+      <div class="ellipse-div"></div>
+      <div class="frame-div">
+        <input type="text" id="user-name" placeholder="Username" />
+        <div class="username-wrapper">
+          <div class="username">Username</div>
+        </div>
+      </div>
+      <div class="seeker-helper-wrapper">
+        <div class="username">Helper / Seeker</div>
+      </div>
+      <div class="loginsign-up-child1" id="image"></div>
+      <div class="loginsign-up-inner1">
+        <input type="text" id="location" placeholder="Location" />
+        <div class="location-wrapper">
+          <div class="username">Location</div>
+        </div>
+      </div>
+      <div class="loginsign-up-inner2">
+        <input type="date" id="dob" placeholder="Date of Birth" />
+        <div class="date-of-birth-wrapper">
+          <div class="username">Date of Birth</div>
+        </div>
+      </div>
+      <div class="loginsign-up-child2">
+        <input
+          type="text"
+          id="captcha"
+          placeholder="Captcha"
+          style="width: 279px; height: 48px"
+        />
+      </div>
+      <div class="rectangle-div" id="rectangle"></div>
+      <b class="sign-up" id="register-button1">SIGN UP</b>
+      <div class="loginsign-up-child3"></div>
+      <div class="loginsign-up-child4"></div>
+      <a href="/"><b class="home">Home</b></a>
+      <b class="browse-tasks">Browse tasks</b>
+      <div class="dropdown">
+        <a><b class="how-it-works">How It Works</b></a>
+        <div class="dropdown-content">
+          <a href="/Howitworks"><b>Details</b></a>
+          <a href="/Helper"><b>Become a helper</b></a>
+        </div>
+      </div>
+      <b class="contact">Contact</b>
+      <div class="loginsign-up-child5">
+        <label class="switch">
+          <input type="checkbox" id="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <script src="js/register.js"></script>
+  </body>
+</html>

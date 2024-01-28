@@ -1,0 +1,338 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: radial-gradient(50% 50%at 50% 50%, #ebf3f5 13.09%, #b5d1df);
+  box-shadow: 0 8px 16px #5f3d3d33;
+  z-index: 1;
+  border: #000000 1px transparent;
+  border-radius: 10px;
+  top: 94px;
+  left: 1270px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #3b4651;
+}
+
+.dropdown-content a {
+  color: #111010;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+}
+
+b:hover {
+  color: rgb(158, 150, 150);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+b:visited {
+  color: #3b4651;
+  text-decoration: none;
+}
+
+.profile-management-child,
+.profile-management-item {
+  position: absolute;
+  top: -460px;
+  left: 463px;
+  border-radius: 50%;
+  background: linear-gradient(135.94deg, #d8e6ef 8.44%, #b4d8e4), #d9d9d9;
+  width: 1421px;
+  height: 1432px;
+}
+.profile-management-item {
+  top: 1312px;
+  left: -598px;
+}
+.logo-icon {
+  position: absolute;
+  top: 34px;
+  left: 36px;
+  width: 90.07px;
+  height: 90.07px;
+}
+.home {
+  position: absolute;
+  top: 64px;
+  left: 355px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #3b4651;
+}
+.browse-tasks {
+  left: 465px;
+}
+.browse-tasks,
+.contact,
+.messages,
+.my-tasks,
+.notifications {
+  position: absolute;
+  top: 64px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #3b4651;
+}
+.my-tasks {
+  left: 682px;
+  cursor: pointer;
+}
+.contact,
+.messages,
+.notifications {
+  left: 850px;
+}
+.messages,
+.notifications {
+  left: 1180px;
+}
+.notifications {
+  left: 992px;
+}
+.blank-profile-picture-973460-1-icon {
+  position: absolute;
+  top: 44px;
+  left: 1364px;
+  border-radius: 33px;
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+.profile-management-inner {
+  position: absolute;
+  top: 782px;
+  left: 169px;
+  border-radius: 50%;
+  background: linear-gradient(135.94deg, #d8e6ef 8.44%, #b4d8e4);
+  width: 372px;
+  height: 379.4px;
+}
+.rectangle-div {
+  position: absolute;
+  top: 405px;
+  left: 106px;
+  border-radius: 29px;
+  background-color: #d9ebf3;
+  width: 1239px;
+  height: 954px;
+}
+.profile-management-child1 {
+  position: absolute;
+  top: 294px;
+  left: 106px;
+  border-radius: 38px;
+  background-color: rgba(186, 209, 218, 0.5);
+  backdrop-filter: blur(10px);
+  width: 1241px;
+  height: 198px;
+}
+.profile-management-child2 {
+  position: absolute;
+  top: 552px;
+  left: 908px;
+  border-radius: 14px;
+  background-color: var(--color-aliceblue-100);
+  backdrop-filter: blur(10px);
+  width: 299px;
+  height: 119px;
+}
+.logo-icon1 {
+  position: absolute;
+  top: 306px;
+  left: 618px;
+  width: 172.05px;
+  height: 172.05px;
+  opacity: 0.5;
+}
+.user-didnt-received {
+  margin: 0;
+}
+.user-didnt-received-container {
+  position: absolute;
+  top: 612px;
+  left: 933px;
+  font-size: 15px;
+  color: var(--color-gray);
+  display: inline-block;
+  width: 258px;
+}
+.as-a-helper {
+  position: absolute;
+  top: 572px;
+  left: 933px;
+  font-size: var(--font-size-xl);
+  color: #000;
+}
+.blank-profile-picture-973460-1-icon1 {
+  position: absolute;
+  top: 423px;
+  left: 217px;
+  border-radius: 66px;
+  width: 138px;
+  height: 138px;
+  object-fit: cover;
+}
+.user-nam {
+  letter-spacing: -0.04em;
+}
+.e {
+  letter-spacing: 0.74em;
+}
+.st-albans-vic,
+.user-name {
+  position: absolute;
+  left: 204px;
+  text-transform: uppercase;
+}
+.user-name {
+  top: 577px;
+  font-size: 32px;
+  color: #544e4e;
+}
+.st-albans-vic {
+  top: 620px;
+  font-size: var(--font-size-xl);
+  letter-spacing: -0.04em;
+  color: #716b6b;
+}
+.frame-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-aliceblue-100);
+  backdrop-filter: blur(10px);
+  width: 999px;
+  height: 226px;
+}
+.about,
+.something-that-best,
+.tagline,
+.you-can-edit {
+  position: absolute;
+  top: 39px;
+  left: 28px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+.something-that-best,
+.tagline,
+.you-can-edit {
+  top: 122px;
+}
+.something-that-best,
+.you-can-edit {
+  top: 75px;
+  left: 48px;
+  font-size: var(--font-size-base);
+  color: var(--color-lightslategray);
+}
+.something-that-best {
+  top: 152px;
+  left: 49px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 722px;
+  left: 204px;
+  width: 1003px;
+  height: 226px;
+  overflow: hidden;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray);
+}
+.frame-inner {
+  position: absolute;
+  top: 114px;
+  left: 47.5px;
+  border-radius: 18px;
+  width: 100px;
+  height: 100px;
+}
+.plus-1-icon {
+  position: absolute;
+  top: 135px;
+  left: 69px;
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+}
+.rectangle-group {
+  position: absolute;
+  top: 1029px;
+  left: 204px;
+  width: 1003px;
+  height: 247px;
+  overflow: hidden;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray);
+}
+.edit-246-1-icon,
+.edit-246-1-icon1,
+.edit-246-2-icon {
+  position: absolute;
+  top: 1014px;
+  left: 1174px;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+}
+.edit-246-1-icon1,
+.edit-246-2-icon {
+  top: 700px;
+}
+.edit-246-2-icon {
+  top: 272px;
+  left: 1323px;
+}
+.profile-management {
+  width: 100%;
+  position: relative;
+  border-radius: 30px;
+  background: radial-gradient(50% 50%at 50% 50%, #ebf3f5 13.09%, #c5e2f0);
+  border: 4px solid #3a3737;
+  box-sizing: border-box;
+  height: 1501px;
+  overflow-x: auto;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-inter);
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  line-height: normal;
+}
+
+:root {
+  --font-inter: Inter;
+
+  --font-size-base: 16px;
+  --font-size-xl: 20px;
+  --font-size-xs: 12px;
+
+  --color-lightslategray: #91919b;
+  --color-gray: #787575;
+  --color-aliceblue-100: #e4eff3;
+  --color-dimgray-100: #596774;
+
+  --br-xl: 20px;
+}

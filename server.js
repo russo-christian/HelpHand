@@ -1,4 +1,3 @@
-// Load .env file for variables
 require('dotenv').config();
 
 // Create and configure Express
@@ -10,6 +9,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
 const taskRoutes = require("./routers/task.router");
 
+//const app = express();
 const base = `${__dirname}/public`;
 const port = process.env.PORT;
 const dbUri = process.env.DB_URI;
@@ -22,12 +22,16 @@ mongoose
 
 // Routes
 app.use("/api/users", userRoutes);
-app.use("/api/tasks", taskRoutes);
+app.use('/api/tasks', taskRoutes);
 
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   res.sendFile(`${base}/index.html`);
+});
+
+app.get("/login", (req, res) => {
+  res.sendFile(`${base}/views/login.html`);
 });
 
 app.get("/Howitworks", (req, res) => {
@@ -38,8 +42,20 @@ app.get("/Helper", (req, res) => {
   res.sendFile(`${base}/views/Helper.html`);
 });
 
-app.get("/login", (req, res) => {
-  res.sendFile(`${base}/views/login.html`);
+app.get("/profile", (req, res) => {
+  res.sendFile(`${base}/views/profile.html`);
+});
+
+app.get("/task", (req, res) => {
+  res.sendFile(`${base}/views/Task.html`);
+});
+
+app.get("/login1", (req, res) => {
+  res.sendFile(`${base}/views/login1.html`);
+});
+
+app.get("/complete-registration", (req, res) => {
+  res.sendFile(`${base}/views/login2.html`);
 });
 
 // Start the server
@@ -47,5 +63,4 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-console.log(port);
 module.exports = app;
