@@ -59,8 +59,12 @@ app.get("/complete-registration", (req, res) => {
   res.sendFile(`${base}/views/login2.html`);
 });
 
-app.get("/chat", (req, res) => {
-  res.sendFile(`${base}/views/chat.html`);
+app.get("/chat1", (req, res) => {
+  res.sendFile(`${base}/views/chat1.html`);
+});
+
+app.get("/chat2", (req, res) => {
+  res.sendFile(`${base}/views/chat2.html`);
 });
 
 // Start the server
@@ -86,13 +90,18 @@ io.on("connection", function (socket) {
     activeUsers.delete(socket.userId);
     io.emit("user disconnected", socket.userId);
   });
-
-  socket.on("chat message", function (data) {
-    io.emit("chat message", data);
-  });
   
   socket.on("typing", function (data) {
     socket.broadcast.emit("typing", data);
+  });
+
+  socket.on("join room", (roomId) => {
+    socket.join(roomId);
+  });
+
+  socket.on("private message", (data) => {
+    const { roomId, message } = data;
+    io.to(roomId).emit("private message", message);
   });
 });
 
