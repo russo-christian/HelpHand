@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 
 // Create and configure Express
 const express = require("express");
@@ -23,7 +23,7 @@ mongoose
 
 // Routes
 app.use("/api/users", userRoutes);
-app.use('/api/tasks', taskRoutes);
+app.use("/api/tasks", taskRoutes);
 
 app.use(express.static("public"));
 
@@ -57,6 +57,14 @@ app.get("/login1", (req, res) => {
 
 app.get("/complete-registration", (req, res) => {
   res.sendFile(`${base}/views/login2.html`);
+});
+
+app.get("/browse-task", (req, res) => {
+  res.sendFile(`${base}/views/Browse-task.html`);
+});
+
+app.get("/browse-task1", (req, res) => {
+  res.sendFile(`${base}/views/Browse-task1.html`);
 });
 
 app.get("/chat1", (req, res) => {

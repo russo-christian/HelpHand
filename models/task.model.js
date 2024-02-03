@@ -6,8 +6,9 @@ const taskSchema = new mongoose.Schema({
     title: String,
     description: String,
     dueDate: Date,
-    pay: String,
+    pay: Number,
     location: String,
+    category: String,
     imagePath: {
         type: String,
         default: ''
