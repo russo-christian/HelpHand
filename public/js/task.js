@@ -71,7 +71,7 @@ function formatCurrency(input, blur) {
   }
 
   // Limit input value length to 8 digits
-  //   input_val = input_val.substring(0, 8);
+  input_val = input_val.substring(0, 8);
 
   // send updated string to input
   input.val(input_val);
