@@ -5,11 +5,12 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+const socket = require("socket.io");
+
 const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
 const taskRoutes = require("./routers/task.router");
 
-//const app = express();
 const base = `${__dirname}/public`;
 const port = process.env.PORT;
 const dbUri = process.env.DB_URI;
@@ -66,9 +67,50 @@ app.get("/browse-task1", (req, res) => {
   res.sendFile(`${base}/views/Browse-task1.html`);
 });
 
+app.get("/chat1", (req, res) => {
+  res.sendFile(`${base}/views/chat1.html`);
+});
+
+app.get("/chat2", (req, res) => {
+  res.sendFile(`${base}/views/chat2.html`);
+});
+
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+const server = app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+  console.log(`http://localhost:${port}`);
+});
+
+const io = socket(server);
+
+const activeUsers = new Set();
+
+io.on("connection", function (socket) {
+  console.log("Made socket connection");
+
+  socket.on("new user", function (data) {
+    socket.userId = data;
+    activeUsers.add(data);
+    io.emit("new user", [...activeUsers]);
+  });
+
+  socket.on("disconnect", () => {
+    activeUsers.delete(socket.userId);
+    io.emit("user disconnected", socket.userId);
+  });
+  
+  socket.on("typing", function (data) {
+    socket.broadcast.emit("typing", data);
+  });
+
+  socket.on("join room", (roomId) => {
+    socket.join(roomId);
+  });
+
+  socket.on("private message", (data) => {
+    const { roomId, message } = data;
+    io.to(roomId).emit("private message", message);
+  });
 });
 
 module.exports = app;
