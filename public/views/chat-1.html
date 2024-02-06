@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="css/chat.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Segoe UI:wght@300;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="messaging-page">
+      <div class="messaging-page-child"></div>
+      <div class="messaging-page-item"></div>
+      <img class="logo-icon" alt="" src="img/logo.svg" />
+
+      <a href="/"><b class="home">Home</b></a>
+      <b class="browse-tasks">Browse tasks</b>
+      <b class="my-tasks">My Tasks</b>
+      <b class="contact">Contact</b>
+      <img
+        class="blank-profile-picture-973460-1-icon"
+        alt=""
+        src="img/profile.png"
+        id="profile-icon"
+      />
+
+      <div class="messaging-page-inner"></div>
+      <div class="ellipse-div"></div>
+      <div class="messaging-page-child1"></div>
+      <div class="messaging-page-child2"></div>
+      <img
+        class="eclipse-selection-icon"
+        alt=""
+        src="img/eclipse-selection.png"
+      />
+
+      <div class="light-mode">
+        <div class="light-mode-child"></div>
+        <div class="light-mode-item" id="main-container"></div>
+        <div class="rectangle-div"></div>
+        <div class="oladele-oluwadare-parent">
+          <b class="oladele-oluwadare">
+            <p class="oladele" id="fname"></p>
+            <p class="oladele" id="lname"></p>
+          </b>
+          <img
+            class="vuesaxlinearsetting-2-icon"
+            alt=""
+            src="img/setting-2.png"
+          />
+        </div>
+        <div class="line-div"></div>
+        <img class="group-icon" alt="" src="img/Group.png" />
+
+        <input
+          class="light-mode-inner"
+          id="messageInput"
+          placeholder="Type a message or send a voice note"
+        />
+        <img
+          class="vuesaxlinearmicrophone-2-icon"
+          id="messageForm"
+          alt=""
+          src="img/send.png"
+        />
+
+        <img class="smiley-icon" alt="" src="img/Smiley.png" />
+
+        <img class="paperclip-icon" alt="" src="img/Paperclip.png" />
+
+        <img
+          class="blank-profile-picture-973460-1-icon1"
+          alt=""
+          src="img/profile.png"
+        />
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io//4.7.4/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat1.js"></script>
+  </body>
+</html>

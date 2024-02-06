@@ -32,6 +32,7 @@
   left: 355px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
+  color: #3b4651;
 }
 .browse-tasks,
 .contact,
@@ -1010,6 +1011,9 @@ p {
 }
 
 .blank-profile-picture-973460-1-icon1 {
+  position: absolute;
+  top: 50px;
+  left: 1066px;
   border-radius: 33px;
   width: 65px;
   height: 65px;
