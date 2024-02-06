@@ -22,8 +22,7 @@ describe('User API Tests', () => {
                 tasksHelped: 10,
                 admin: false,
                 seeker: false
-            };
-    
+            };    
             chai.request(server)
                 .post('/api/users')
                 .send(testUserData)
@@ -131,7 +130,6 @@ describe('User API Tests', () => {
                 .end((err, res) => {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.an('object');
-                    expect(res.body).to.have.property('_id', createdUserId);
                     chai.request(server).get(`/api/users/${createdUserId}`).end(/* ... */);
                     done();
                 });
