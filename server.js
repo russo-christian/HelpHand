@@ -10,6 +10,7 @@ const socket = require("socket.io");
 const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
 const taskRoutes = require("./routers/task.router");
+const contactRoutes = require("./routers/contact.router");
 
 const base = `${__dirname}/public`;
 const port = process.env.PORT;
@@ -24,6 +25,7 @@ mongoose
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/tasks", taskRoutes);
+app.use("/api/contacts", contactRoutes);
 
 app.use(express.static("public"));
 
@@ -73,6 +75,10 @@ app.get("/chat-1", (req, res) => {
 
 app.get("/chat-2", (req, res) => {
   res.sendFile(`${base}/views/chat-2.html`);
+});
+
+app.get("/my-tasks", (req, res) => {
+  res.sendFile(`${base}/views/MyTasks.html`);
 });
 
 app.get("/contact", (req, res) => {

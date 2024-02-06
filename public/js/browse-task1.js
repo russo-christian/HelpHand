@@ -1,3 +1,5 @@
+let id = JSON.parse(localStorage.getItem("ID")) || [];
+
 document.addEventListener("DOMContentLoaded", function () {
   const loginButton = document.getElementById("login-button");
   const profileIcon = document.getElementById("profile-icon");
@@ -272,8 +274,6 @@ function taskDisplay(tasks) {
       const floatingWindow = document.getElementById("floating-window");
       floatingWindow.style.display = "block";
 
-      const id = task._id;
-
       const para = document.createElement("div");
       para.className = "para";
       para.textContent = task.description;
@@ -343,7 +343,37 @@ function taskDisplay(tasks) {
       const description = document.createElement("div");
       description.className = "description";
       description.textContent = task.description;
+      const accept = document.createElement("button");
+      accept.className = "accept";
+      accept.textContent = "Accept";
 
+      const email = localStorage.getItem("logged-email");
+      console.log(email);
+
+      accept.addEventListener("click", function () {
+        fetch(`/api/users/profile/${email}`)
+          .then((response) => response.json())
+          .then((user) => {
+            console.log(user.tasksHelped);
+            const taskHelped = user.tasksHelped + 1;
+            user.tasksHelped = taskHelped;
+
+            fetch(`/api/users/${user._id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(user),
+            })
+              .then((response) => response.json())
+              .then((user) => {
+                id.push(task._id);
+                localStorage.setItem("ID", JSON.stringify(id));
+                console.log(user.tasksHelped);
+                window.location.href = `/my-tasks`;
+              });
+          });
+      });
       const workimage = document.createElement("img");
       workimage.className = "frame212";
       workimage.src = task.imagePath;

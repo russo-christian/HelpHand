@@ -45,22 +45,17 @@ b:visited {
   text-transform: uppercase;
   color: #3b4651;
 }
-.contact,
-.messages,
-.my-tasks,
-.notifications {
-  left: 127px;
+.my-tasks {
+  left: 120px;
 }
-.contact,
-.messages,
-.notifications {
-  left: 295px;
+.contact {
+  left: 325px;
 }
 .messages {
-  left: 675px;
+  left: 705px;
 }
 .notifications {
-  left: 457px;
+  left: 487px;
 }
 .blank-profile-picture-973460-1-icon {
   position: absolute;

@@ -866,6 +866,7 @@ body {
   left: 0.4%;
   line-height: 16.8px;
   display: inline-block;
+  font-size: var(--font-size-xs);
 }
 .earn-money {
   width: 51.61%;
@@ -906,6 +907,7 @@ body {
   left: 0.4%;
   line-height: 16.8px;
   display: inline-block;
+  font-size: var(--font-size-xs);
 }
 .airtasker-for-business,
 .new-users-faq {
@@ -989,6 +991,7 @@ body {
   left: 0.4%;
   line-height: 16.8px;
   display: inline-block;
+  font-size: var(--font-size-xs);
 }
 .contact-us {
   width: 49.6%;
@@ -1016,6 +1019,7 @@ body {
   position: absolute;
   line-height: 16.8px;
   display: inline-block;
+  font-size: var(--font-size-xs);
 }
 .privacy-policy {
   width: 69.6%;
@@ -1182,6 +1186,7 @@ body {
   left: 0.36%;
   line-height: 16.8px;
   display: inline-block;
+  font-size: var(--font-size-xs);
 }
 .browse-tasks1,
 .login1,
@@ -1198,7 +1203,6 @@ body {
   width: 63.04%;
   top: 88px;
   left: 0;
-  font-size: var(--font-size-xs);
 }
 .frame9 {
   position: absolute;
