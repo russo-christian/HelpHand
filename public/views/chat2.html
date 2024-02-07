@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Socket.io simple chat</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <div class="container">
@@ -19,12 +19,18 @@
       </div>
       <div class="chat-messages" id="chatMessages"></div>
       <form class="message_form" id="messageForm">
-          <input type="text" class="message_form__input" id="messageInput" placeholder="Type a message" />
-          <button class="message_form__button" type="submit">Send</button>
+        <input
+          type="text"
+          class="message_form__input"
+          id="messageInput"
+          placeholder="Type a message"
+        />
+        <button class="message_form__button" type="submit">Send</button>
       </form>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io//4.7.4/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="js/chat2.js"></script>
   </body>
 </html>

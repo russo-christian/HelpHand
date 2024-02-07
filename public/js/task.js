@@ -1,4 +1,4 @@
-// Existing code
+
 $("input[data-type='currency']").on({
   keyup: function () {
     formatCurrency($(this));
@@ -171,3 +171,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+const email = localStorage.getItem("logged-email");
+console.log(email);
+// Fetch user details
+fetch(`/api/users/profile/${email}`)
+  .then((response) => response.json())
+  .then((user) => {
+    console.log(user);
+    const browse = document.getElementById("browse");
+    if (user.seeker === true) {
+      browse.addEventListener("click", function () {
+        window.location.href = "/browse-task";
+      });
+    } else if (user.seeker === false) {
+      browse.addEventListener("click", function () {
+        window.location.href = "/browse-task1";
+      });
+    }
+  })
+  .catch((error) => console.error("Error fetching user details:", error));

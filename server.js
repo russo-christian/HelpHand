@@ -10,6 +10,7 @@ const socket = require("socket.io");
 const mongoose = require("mongoose");
 const userRoutes = require("./routers/user.router");
 const taskRoutes = require("./routers/task.router");
+const contactRoutes = require("./routers/contact.router");
 
 const base = `${__dirname}/public`;
 const port = process.env.PORT;
@@ -24,6 +25,7 @@ mongoose
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/tasks", taskRoutes);
+app.use("/api/contacts", contactRoutes);
 
 app.use(express.static("public"));
 
@@ -67,12 +69,20 @@ app.get("/browse-task1", (req, res) => {
   res.sendFile(`${base}/views/Browse-task1.html`);
 });
 
-app.get("/chat1", (req, res) => {
-  res.sendFile(`${base}/views/chat1.html`);
+app.get("/chat-1", (req, res) => {
+  res.sendFile(`${base}/views/chat-1.html`);
 });
 
-app.get("/chat2", (req, res) => {
-  res.sendFile(`${base}/views/chat2.html`);
+app.get("/chat-2", (req, res) => {
+  res.sendFile(`${base}/views/chat-2.html`);
+});
+
+app.get("/my-tasks", (req, res) => {
+  res.sendFile(`${base}/views/MyTasks.html`);
+});
+
+app.get("/contact", (req, res) => {
+  res.sendFile(`${base}/views/contactus.html`);
 });
 
 // Start the server
@@ -98,7 +108,7 @@ io.on("connection", function (socket) {
     activeUsers.delete(socket.userId);
     io.emit("user disconnected", socket.userId);
   });
-  
+
   socket.on("typing", function (data) {
     socket.broadcast.emit("typing", data);
   });
@@ -108,8 +118,8 @@ io.on("connection", function (socket) {
   });
 
   socket.on("private message", (data) => {
-    const { roomId, message } = data;
-    io.to(roomId).emit("private message", message);
+    const { roomId, message, sender, fname } = data;
+    io.to(roomId).emit("private message", message, sender, fname);
   });
 });
 
