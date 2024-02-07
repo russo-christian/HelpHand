@@ -373,7 +373,7 @@ input {
 .edit-time,
 .edit-date,
 .edit-loc,
-.edit-category{
+.edit-category {
   top: 17px;
   left: 17px;
   border-radius: var(--br-5xs);
@@ -392,8 +392,7 @@ input {
   margin: 0;
 }
 
-.edit-details
-{
+.edit-details {
   top: 15px;
   left: 3px;
   border-radius: var(--br-5xs);
@@ -411,8 +410,7 @@ input {
   font-family: var(--font-inter);
 }
 
-.edit-equip
-{
+.edit-equip {
   top: 100px;
   left: 3px;
   border-radius: var(--br-5xs);
