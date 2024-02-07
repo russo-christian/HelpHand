@@ -327,6 +327,8 @@ document.addEventListener("DOMContentLoaded", function () {
     uploadImageInput.addEventListener('change', handleImageUpload);
   });
   
+
+  
   
   
   
