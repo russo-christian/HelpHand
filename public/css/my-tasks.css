@@ -732,12 +732,12 @@
 }
 .frame-child {
   position: absolute;
-  top: 0;
+  top: -100px;
   left: 0;
   border-radius: var(--br-10xl);
   background-color: var(--color-aliceblue-200);
   width: 579px;
-  height: 1992px;
+  height: 2000px;
   flex-direction: column;
 }
 .frame-item {
@@ -1038,7 +1038,7 @@ p {
 
 .floating-window {
   position: absolute;
-  top: 262px;
+  top: 170px;
   left: 720px;
   width: 600px;
   height: 600px;
@@ -1138,7 +1138,7 @@ p {
 
 .accept {
   position: absolute;
-  width: 15.72%;
+  width: 25.72%;
   top: 500px;
   left: 400px;
   letter-spacing: 0.25px;
