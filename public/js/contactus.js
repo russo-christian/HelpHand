@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const contactUsButton = document.getElementById("submit");
 
   contactUsButton.addEventListener("click", function () {
-    const fname = document.getElementById("fname").value;
-    const lname = document.getElementById("lsname").value;
+    const firstName = document.getElementById("fname").value;
+    const lastName = document.getElementById("lsname").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("msg").value;
-    const data = { fname, lsname, email, message };
-    submitForm(data, "/api/contactus");
+    const data = { firstName, lastName, email, message };
+    submitForm(data, "/api/contacts");
   });
 
   async function submitForm(data, url) {

@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const browse = document.getElementById("browse");
       if (user.seeker === true) {
         browse.addEventListener("click", function () {
-          window.location.href = "/browse-tasks";
+          window.location.href = "/browse-task";
         });
       }
       else if (user.seeker === false) {

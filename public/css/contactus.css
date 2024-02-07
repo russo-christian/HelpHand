@@ -209,6 +209,13 @@
   width: 104.11px;
   height: 32.66px;
 }
+
+.submit:hover {
+  background-color: #d2e4ed;
+  color: #3b4651;
+  cursor: pointer;
+}
+
 .rectangle-parent {
   position: absolute;
   top: 1104px;

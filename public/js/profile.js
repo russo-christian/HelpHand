@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (tasks.innerText === `POST TASKS`) {
       window.location.href = "/task";
     } else if (tasks.innerText === `MY TASK`) {
-      window.location.href = "/browse-tasks";
+      window.location.href = "/my-tasks";
     }
   });
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const browse = document.getElementById("browse");
       if (user.seeker === true) {
         browse.addEventListener("click", function () {
-          window.location.href = "/browse-tasks";
+          window.location.href = "/browse-task";
         });
       } else if (user.seeker === false) {
         browse.addEventListener("click", function () {

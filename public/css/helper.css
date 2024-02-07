@@ -975,6 +975,7 @@ body {
   top: calc(50% - 156.09px);
   left: 0.4%;
   line-height: 22.4px;
+  font-weight: 500;
   display: inline-block;
 }
 .careers,
@@ -1069,6 +1070,7 @@ body {
   top: calc(50% - 156.09px);
   left: 0.34%;
   line-height: 22.4px;
+  font-weight: 500;
   display: inline-block;
 }
 .cleaning-services {

@@ -29,6 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const messageForm = document.getElementById("messageForm");
       const messageInput = document.getElementById("messageInput");
 
+      const browse = document.getElementById("browse");
+      if (user.seeker === true) {
+        browse.addEventListener("click", function () {
+          window.location.href = "/browse-task";
+        });
+      } else if (user.seeker === false) {
+        browse.addEventListener("click", function () {
+          window.location.href = "/browse-task1";
+        });
+      }
+
       messageForm.addEventListener("click", (e) => {
         i = i + j;
         e.preventDefault();
