@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchUserData();
   setupEditIcons();
 });
- 
+
 function setupLogout() {
   document.getElementById("logout").addEventListener("click", function () {
     localStorage.removeItem("token");
@@ -12,7 +12,7 @@ function setupLogout() {
     window.location.href = "/";
   });
 }
- 
+
 function fetchUserData() {
   const email = localStorage.getItem("logged-email");
 
@@ -39,7 +39,7 @@ function fetchUserData() {
       .catch((error) => console.error("Error fetching user details:", error));
   }
 }
- 
+
 function setupEditIcons() {
   // Setup edit functionality for username
   const editUsernameIcon = document.getElementById("editUsernameIcon");
@@ -51,7 +51,7 @@ function setupEditIcons() {
     usernameDisplay.style.display = "none";
     usernameInput.focus();
   });
- 
+
   usernameInput.addEventListener("blur", function () {
     if (usernameInput.value !== usernameDisplay.innerText) {
       editField("username", usernameInput.value);
@@ -59,7 +59,7 @@ function setupEditIcons() {
     usernameInput.style.display = "none";
     usernameDisplay.style.display = "block";
   });
- 
+
   usernameInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       if (usernameInput.value !== usernameDisplay.innerText) {
@@ -69,7 +69,7 @@ function setupEditIcons() {
       usernameDisplay.style.display = "block";
     }
   });
- 
+
   // Similar setup for location
   const editLocationIcon = document.getElementById("editLocIcon");
   const locationInput = document.getElementById("locationInput");
@@ -80,7 +80,7 @@ function setupEditIcons() {
     locationDisplay.style.display = "none";
     locationInput.focus();
   });
- 
+
   locationInput.addEventListener("blur", function () {
     if (locationInput.value !== locationDisplay.innerText) {
       editField("location", locationInput.value);
@@ -88,7 +88,7 @@ function setupEditIcons() {
     locationInput.style.display = "none";
     locationDisplay.style.display = "block";
   });
- 
+
   locationInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       if (locationInput.value !== locationDisplay.innerText) {
@@ -106,7 +106,7 @@ function setupEditIcons() {
     );
     if (newDob) editField("dateOfBirth", new Date(newDob).toISOString());
   };
- 
+
   const fullnameElement = document.getElementById("fullname");
   fullnameElement.onclick = () => {
     const newFullName = prompt(
@@ -120,16 +120,16 @@ function setupEditIcons() {
     }
   };
 }
- 
+
 function editField(fieldName, value) {
   if (!currentUserId || !value) {
     console.error("Invalid data for update.");
     return;
   }
- 
+
   let updateData = {};
   updateData[fieldName] = value;
- 
+
   fetch(`/api/users/${currentUserId}`, {
     method: "PUT",
     headers: {
@@ -147,63 +147,3 @@ function editField(fieldName, value) {
     })
     .catch((error) => console.error("Error updating user data:", error));
 }
-=======
-  console.log(email);
-
-  // Fetch user details
-  fetch(`/api/users/profile/${email}`)
-    .then((response) => response.json())
-    .then((user) => {
-      // Assuming 'user' contains the user details
-      // Update the HTML to display the user details
-      userDetailsElement.innerHTML = `
-        <span class="user-nam" id="username">${user.firstName}</span>
-        <!-- Add more fields as needed -->
-      `;
-      console.log(user);
-    })
-    .catch((error) => console.error("Error fetching user details:", error));
-
-  const tasks = document.getElementById("myTasksText");
-
-  fetch(`/api/users/profile/${email}`)
-    .then((response) => response.json())
-    .then((user) => {
-      console.log(user);
-      if (user.seeker === true) {
-        console.log("Seeker");
-        tasks.innerText = `Post Tasks`;
-      } else if (user.seeker === false) {
-        console.log("Helper");
-        tasks.innerText = `My Task`;
-      }
-    });
-
-  document.getElementById("myTasksText").addEventListener("click", function () {
-    console.log(tasks.innerText);
-    if (tasks.innerText === `POST TASKS`) {
-      window.location.href = "/task";
-    } else if (tasks.innerText === `MY TASK`) {
-      window.location.href = "/my-tasks";
-    }
-  });
-
-  // Fetch user details
-  fetch(`/api/users/profile/${email}`)
-    .then((response) => response.json())
-    .then((user) => {
-      console.log(user);
-      const browse = document.getElementById("browse");
-      if (user.seeker === true) {
-        browse.addEventListener("click", function () {
-          window.location.href = "/browse-task";
-        });
-      } else if (user.seeker === false) {
-        browse.addEventListener("click", function () {
-          window.location.href = "/browse-task1";
-        });
-      }
-    })
-    .catch((error) => console.error("Error fetching user details:", error));
-});
-

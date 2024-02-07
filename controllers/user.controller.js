@@ -2,17 +2,23 @@ const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 
 const userController = {
-  // Create a new user
   createUser: async (req, res) => {
     try {
-      // Hash the password
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
       const newUser = new User({
-        ...req.body,
+        username: req.body.username,
+        email: req.body.email,
         password: hashedPassword,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        dateOfBirth: req.body.dateOfBirth,
+        location: req.body.location,
+        currentRating: req.body.currentRating,
+        tasksHelped: req.body.tasksHelped,
+        admin: req.body.admin,
+        seeker: req.body.seeker,
       });
       await newUser.save();
-      // Consider excluding sensitive information like password from the response
       res.status(201).send({ ...newUser._doc, password: undefined });
     } catch (error) {
       console.error("Error in createUser:", error);
@@ -20,7 +26,6 @@ const userController = {
     }
   },
 
-  // Retrieve a user by id
   getUserById: async (req, res) => {
     try {
       const user = await User.findById(req.params.id);
@@ -33,10 +38,15 @@ const userController = {
     }
   },
 
-  // Update a user by id
   updateUser: async (req, res) => {
     try {
-      const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+      const updateData = {
+        ...req.body,
+      };
+      if (req.body.password) {
+        updateData.password = await bcrypt.hash(req.body.password, 10);
+      }
+      const user = await User.findByIdAndUpdate(req.params.id, updateData, {
         new: true,
         runValidators: true,
       });
@@ -49,7 +59,6 @@ const userController = {
     }
   },
 
-  // Delete a user by id
   deleteUser: async (req, res) => {
     try {
       const user = await User.findByIdAndDelete(req.params.id);
@@ -62,7 +71,6 @@ const userController = {
     }
   },
 
-  // List all users
   listUsers: async (req, res) => {
     try {
       const users = await User.find({});
@@ -72,7 +80,6 @@ const userController = {
     }
   },
 
-  // Search User by Username
   getUserByUsername: async (req, res) => {
     try {
       const user = await User.findOne({ username: req.params.username });
@@ -85,7 +92,6 @@ const userController = {
     }
   },
 
-  // Search User by Email
   getUserByEmail: async (req, res) => {
     try {
       const user = await User.findOne({ email: req.params.email });
@@ -101,11 +107,9 @@ const userController = {
   getLoggedInUserByEmail: async (req, res) => {
     try {
       const user = await User.findOne({ email: req.params.email });
-
       if (!user) {
         return res.status(404).json({ error: "User not found" });
       }
-
       res.json(user);
     } catch (error) {
       console.error("Error:", error);
@@ -113,14 +117,15 @@ const userController = {
     }
   },
 
-  // User Login
   loginUser: async (req, res) => {
     try {
       const { email, password } = req.body;
       const user = await User.findOne({ email });
       if (user && (await bcrypt.compare(password, user.password))) {
-        // Implement session logic here if needed
-        res.status(200).json({ message: "Logged in successfully", user });
+        res.status(200).json({
+          message: "Logged in successfully",
+          user: { ...user._doc, password: undefined },
+        });
       } else {
         res.status(401).json({ message: "Invalid credentials" });
       }
