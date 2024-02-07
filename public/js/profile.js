@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateUsername();
         }
     });
+
   
     function updateUsername() {
         // Log a message to verify that the update function is called
@@ -111,8 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hide the input field and display the static element
         usernameInput.style.display = "none";
         usernameSpan.style.display = "inline";    
+
     }
   });
+
+  
   
   document.addEventListener("DOMContentLoaded", function() {
     console.log("DOMContentLoaded event fired");
