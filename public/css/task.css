@@ -280,13 +280,14 @@ b:visited {
   color: var(--color-darkgray);
 }
 
-.input1 {
-  top: 1208px;
-  left: 741px;
-  border: 0;
-  width: 323px;
+.inputcurrency {
+  top: 0px;
+  left: 0px;
+  border: none;
+  width: 300px;
   height: 112px;
   font-size: var(--font-size-45xl);
+  z-index: 99;
 }
 
 .div {
@@ -351,6 +352,7 @@ b:visited {
   border-radius: var(--br-lg);
   width: 100px;
   height: 100px;
+  z-index: 1;
 }
 .posting-task-child3,
 .posting-task-child4 {
@@ -366,9 +368,67 @@ input {
   left: 231.5px;
   width: 58px;
   height: 58px;
-  z-index: -1;
 }
 
+.edit-time,
+.edit-date,
+.edit-loc,
+.edit-category{
+  top: 17px;
+  left: 17px;
+  border-radius: var(--br-5xs);
+  border: none;
+  width: 400px;
+  height: 40px;
+  font-size: 18.37px;
+  background-color: transparent;
+  z-index: 99;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  font-size: var(--font-size-mini);
+  color: #3a3737;
+  font-family: var(--font-inter);
+  margin: 0;
+}
+
+.edit-details
+{
+  top: 15px;
+  left: 3px;
+  border-radius: var(--br-5xs);
+  border: none;
+  width: 1000px;
+  height: 80px;
+  font-size: 18.37px;
+  background-color: transparent;
+  z-index: 99;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  font-size: var(--font-size-mini);
+  color: #3a3737;
+  font-family: var(--font-inter);
+}
+
+.edit-equip
+{
+  top: 100px;
+  left: 3px;
+  border-radius: var(--br-5xs);
+  border: none;
+  width: 1000px;
+  height: 48px;
+  font-size: 18.37px;
+  background-color: transparent;
+  z-index: 99;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  font-size: var(--font-size-mini);
+  color: #3a3737;
+  font-family: var(--font-inter);
+}
 .plus-1-icon,
 .plus-2-icon,
 .plus-3-icon {
@@ -378,6 +438,7 @@ input {
   width: 58px;
   height: 58px;
   object-fit: cover;
+  z-index: 99;
 }
 .plus-2-icon,
 .plus-3-icon {

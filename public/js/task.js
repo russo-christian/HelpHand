@@ -1,3 +1,4 @@
+
 $("input[data-type='currency']").on({
   keyup: function () {
     formatCurrency($(this));
@@ -14,7 +15,7 @@ function formatNumber(n) {
 
 function formatCurrency(input, blur) {
   // appends $ to value, validates decimal side
-  // and puts cursor back in right position.
+  // and puts cursor back in the right position.
 
   // get input value
   var input_val = input.val();
@@ -32,7 +33,7 @@ function formatCurrency(input, blur) {
 
   // check for decimal
   if (input_val.indexOf(".") >= 0) {
-    // get position of first decimal
+    // get position of the first decimal
     // this prevents multiple decimals from
     // being entered
     var decimal_pos = input_val.indexOf(".");
@@ -41,10 +42,10 @@ function formatCurrency(input, blur) {
     var left_side = input_val.substring(0, decimal_pos);
     var right_side = input_val.substring(decimal_pos);
 
-    // add commas to left side of number
+    // add commas to the left side of the number
     left_side = formatNumber(left_side);
 
-    // validate right side
+    // validate the right side
     right_side = formatNumber(right_side);
 
     // On blur make sure 2 numbers after decimal
@@ -55,11 +56,11 @@ function formatCurrency(input, blur) {
     // Limit decimal to only 2 digits
     right_side = right_side.substring(0, 2);
 
-    // join number by .
+    // join the number by .
     input_val = "$" + left_side + "." + right_side;
   } else {
     // no decimal entered
-    // add commas to number
+    // add commas to the number
     // remove all non-digits
     input_val = formatNumber(input_val);
     input_val = "$" + input_val;
@@ -73,10 +74,10 @@ function formatCurrency(input, blur) {
   // Limit input value length to 8 digits
   input_val = input_val.substring(0, 8);
 
-  // send updated string to input
+  // send the updated string to input
   input.val(input_val);
 
-  // put caret back in the right position
+  // put the caret back in the right position
   var updated_len = input_val.length;
   caret_pos = updated_len - original_len + caret_pos;
   input[0].setSelectionRange(caret_pos, caret_pos);
@@ -113,6 +114,63 @@ document
   .addEventListener("click", function () {
     document.getElementById("file-input2").click();
   });
+
+document.addEventListener('DOMContentLoaded', function () {
+  function handleEdit(input) {
+    input.style.display = "block";
+    input.focus();
+  }
+
+  var locInput = document.getElementById("loc");
+  locInput.addEventListener("click", function() {
+    handleEdit(locInput);
+  });
+  locInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      locInput.blur();
+    }
+  });
+
+  var detailsInput = document.getElementById("details");
+  detailsInput.addEventListener("click", function() {
+    handleEdit(detailsInput);
+  });
+  detailsInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      detailsInput.blur();
+    }
+  });
+
+  var timeInput = document.getElementById("time");
+  timeInput.addEventListener("click", function() {
+    handleEdit(timeInput);
+  });
+  timeInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      timeInput.blur();
+    }
+  });
+
+  var dateInput = document.getElementById("date");
+  dateInput.addEventListener("click", function() {
+    handleEdit(dateInput);
+  });
+  dateInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      dateInput.blur();
+    }
+  });
+
+  var categoryInput = document.getElementById("category");
+  categoryInput.addEventListener("click", function() {
+    handleEdit(categoryInput);
+  });
+  categoryInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      categoryInput.blur();
+    }
+  });
+});
 
 const email = localStorage.getItem("logged-email");
 console.log(email);

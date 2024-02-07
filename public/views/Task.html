@@ -39,20 +39,21 @@
       <div class="what-time-of">What time of the day you need it</div>
       <div class="ellipse-div"></div>
       <div class="add-pictures-for">add PICTURES FOR HELP</div>
-      <div class="budget">BDGET</div>
+      <div class="budget">BUDGET</div>
       <div class="rectangle-parent">
         <div class="frame-child"></div>
-        <div class="eg-i-need">EG i need it in st Albans</div>
+        <input type="text" id="loc" class="edit-loc" style="display:block;" placeholder="EG i need it in st Albans">
       </div>
       <div class="rectangle-group">
         <div class="frame-item"></div>
         <div class="ex-deatails-about-container">
           <span class="ex-deatails-about-container1">
             <p class="ex-deatails-about">
-              ex DEATAILS ABOUT THE TASK ABOUT HOW BIG THE GARAGE IS AND WILL
-              YOU PROVIDE THE
+              <input type="text" id="details" class="edit-details" style="display:block;" placeholder="ex DEATAILS ABOUT THE TASK ABOUT HOW BIG THE GARAGE IS AND WILL YOU PROVIDE THE"> 
             </p>
-            <p class="equipments-or-not">EQUIPMENTS OR NOT</p>
+            <p class="equipments-or-not">
+              <input type="text" id="eqip" class="edit-equip" style="display:block;" placeholder="EQUIPMENTS OR NOT">
+            </p>
           </span>
         </div>
       </div>
@@ -63,7 +64,7 @@
       <div class="posting-task-child1"></div>
       <div class="eg120">
         <input
-          class="input1"
+          class="inputcurrency"
           type="text"
           name="currency-field"
           id="currencyfield"
@@ -78,15 +79,15 @@
       <b class="post-task">post task</b>
       <div class="frame-div">
         <div class="frame-child"></div>
-        <div class="eg-i-need">EG In the morning (9am-11 pm)</div>
+        <input type="text" id="time" class="edit-time" style="display:block;" placeholder="EG In the morning (9am-11 pm)"> 
       </div>
       <div class="rectangle-parent1">
         <div class="frame-child"></div>
-        <div class="eg-91024">EG 9/10/24</div>
+        <input type="text" id="date" class="edit-date" style="display:block;" placeholder="EG 9/10/24"> 
       </div>
       <div class="rectangle-parent2">
         <div class="frame-child"></div>
-        <div class="eg-91024">EG i need help me clean my garage</div>
+        <input type="text" id="category" class="edit-category" style="display:block;" placeholder="EG i need help me clean my garage">   
       </div>
       <img class="posting-task-child2" alt="" src="img/rectangle28.png" />
 
@@ -131,6 +132,7 @@
         id="file-input2"
         accept="image/*"
         onchange="previewImage(this)"
+        style="z-index: -1;"
       />
     </div>
 

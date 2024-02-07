@@ -189,9 +189,12 @@ b:visited {
 .user-nam {
   letter-spacing: -0.04em;
 }
-.e {
-  letter-spacing: 0.74em;
+
+.user-container {
+  position: relative;
+  display: inline-block;
 }
+
 .st-albans-vic,
 .user-name {
   position: absolute;
@@ -291,10 +294,45 @@ b:visited {
   height: 44px;
   overflow: hidden;
 }
+
+.edit-246-2-iconloc {
+  position: absolute;
+  top: 610px;
+  left: 430px;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+}
+
+.edit-246-2-icon3 {
+  position: absolute;
+  top: 580px;
+  left: 400px;
+  width: 30px;
+  height: 30px;
+}
+
 .edit-246-1-icon1,
 .edit-246-2-icon {
   top: 700px;
 }
+
+.edit-246-2-icon {
+  top: 580px;
+  left: 400px;
+  width: 30px;
+  height: 30px;
+}
+
+.edit-246-1-icon2{
+  position: absolute;
+  top: 820px;
+  left: 1173px;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+}
+
 .edit-246-2-icon {
   top: 272px;
   left: 1323px;
@@ -316,6 +354,10 @@ b:visited {
   overflow-x: hidden;
 }
 
+#dob input[type="text"] {
+  z-index: 9999; /* Set a high z-index value */
+}
+
 body {
   margin: 0;
   background-color: #000;
@@ -335,4 +377,32 @@ body {
   --color-dimgray-100: #596774;
 
   --br-xl: 20px;
+}
+
+.edit-input {
+  display: none;
+  position: absolute;
+  top: 570px;
+  left: 204px;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  border: none; 
+  background: none;
+  font-size: 30px;
+  color: #544e4e;
+}
+.edit-loc {
+  display: none;
+  position: absolute;
+  height: 25px;
+  width: 200px;
+  top: 630px;
+  left: 204px;
+  margin: 0;
+  padding: 0;
+  border: none; 
+  background: none;
+  font-size: 20px;
+  color: #716b6b;
 }
