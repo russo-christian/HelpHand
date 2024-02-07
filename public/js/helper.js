@@ -33,6 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const email = localStorage.getItem("logged-email");
   console.log(email);
 
+
+  if (email === null) {
+    browse.addEventListener("click", function () {
+      window.location.href = "/browse-task";
+    });
+  } else {
   // Fetch user details
   fetch(`/api/users/profile/${email}`)
     .then((response) => response.json())
@@ -50,4 +56,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
     .catch((error) => console.error("Error fetching user details:", error));
+  }
 });

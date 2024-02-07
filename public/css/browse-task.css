@@ -80,7 +80,7 @@
   left: 119px;
   border-radius: var(--br-10xl);
   background-color: var(--color-aliceblue-200);
-  width: 1280px;
+  width: 83.07%;;
   height: 86px;
 }
 .group-child {
@@ -90,7 +90,7 @@
   border-radius: var(--br-11xl);
   background: radial-gradient(50% 50%at 50% 50%, #9ae0d3, #35a7a0 96.07%),
     #d9d9d9;
-  width: 1512px;
+  width: 100%;
   height: 440px;
 }
 .browse-tasks1,
@@ -515,7 +515,7 @@
   position: absolute;
   top: 2254px;
   left: 0;
-  width: 1512px;
+  width: 100%;
   height: 440px;
   font-size: var(--font-size-base);
   color: var(--color-whitesmoke-200);
