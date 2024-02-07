@@ -1,4 +1,3 @@
-let currentUserId = null;
 document.addEventListener("DOMContentLoaded", function () {
   setupLogout();
   fetchUserData();
@@ -8,7 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function setupLogout() {
   document.getElementById("logout").addEventListener("click", function () {
     localStorage.removeItem("token");
+    localStorage.removeItem("logged-email");
     alert("Logout successful!");
+    // Redirect to the homepage
     window.location.href = "/";
   });
 }

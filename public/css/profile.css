@@ -189,12 +189,9 @@ b:visited {
 .user-nam {
   letter-spacing: -0.04em;
 }
-
-.user-container {
-  position: relative;
-  display: inline-block;
+.e {
+  letter-spacing: 0.74em;
 }
-
 .st-albans-vic,
 .user-name {
   position: absolute;
@@ -294,24 +291,6 @@ b:visited {
   height: 44px;
   overflow: hidden;
 }
-
-.edit-246-2-iconloc {
-  position: absolute;
-  top: 610px;
-  left: 430px;
-  width: 25px;
-  height: 25px;
-  overflow: hidden;
-}
-
-.edit-246-2-icon3 {
-  position: absolute;
-  top: 580px;
-  left: 400px;
-  width: 30px;
-  height: 30px;
-}
-
 .edit-246-1-icon1,
 .edit-246-2-icon {
   top: 700px;
@@ -352,10 +331,6 @@ b:visited {
   font-family: var(--font-inter);
   overflow-y: hidden;
   overflow-x: hidden;
-}
-
-#dob input[type="text"] {
-  z-index: 9999; /* Set a high z-index value */
 }
 
 body {

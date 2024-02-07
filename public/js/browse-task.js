@@ -357,7 +357,6 @@ function taskDisplay(tasks) {
       taskDetailsContainer1.appendChild(title);
       taskDetailsContainer1.appendChild(description);
       taskDetailsContainer1.appendChild(para);
-      taskDetailsContainer1.appendChild(accept);
       taskDetailsContainer1.appendChild(closebtn);
     });
 

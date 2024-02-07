@@ -280,14 +280,13 @@ b:visited {
   color: var(--color-darkgray);
 }
 
-.inputcurrency {
-  top: 0px;
-  left: 0px;
-  border: none;
-  width: 300px;
+.input1 {
+  top: 1208px;
+  left: 741px;
+  border: 0;
+  width: 323px;
   height: 112px;
   font-size: var(--font-size-45xl);
-  z-index: 99;
 }
 
 .div {
@@ -352,7 +351,6 @@ b:visited {
   border-radius: var(--br-lg);
   width: 100px;
   height: 100px;
-  z-index: 1;
 }
 .posting-task-child3,
 .posting-task-child4 {
@@ -368,12 +366,13 @@ input {
   left: 231.5px;
   width: 58px;
   height: 58px;
+  z-index: -1;
 }
 
 .edit-time,
 .edit-date,
 .edit-loc,
-.edit-category {
+.edit-category{
   top: 17px;
   left: 17px;
   border-radius: var(--br-5xs);
@@ -436,7 +435,6 @@ input {
   width: 58px;
   height: 58px;
   object-fit: cover;
-  z-index: 99;
 }
 .plus-2-icon,
 .plus-3-icon {
