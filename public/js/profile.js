@@ -8,12 +8,13 @@ function setupLogout() {
   document.getElementById("logout").addEventListener("click", function () {
     localStorage.removeItem("token");
     localStorage.removeItem("logged-email");
+    localStorage.removeItem("logged-email");
     alert("Logout successful!");
     // Redirect to the homepage
     window.location.href = "/";
   });
 }
-
+ 
 function fetchUserData() {
   const email = localStorage.getItem("logged-email");
 
