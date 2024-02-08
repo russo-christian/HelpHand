@@ -1257,3 +1257,56 @@ p {
 span {
   font-size: 15px;
 }
+.task-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.task-item h3 {
+  margin-top: 0;
+  color: #333;
+}
+.task-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-item-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.task-item-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.task-item-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.view-task-details {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}

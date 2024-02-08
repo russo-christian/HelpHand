@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Please fill in all the fields");
       return;
     }
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
 
     localStorage.setItem("fname", fname);
     localStorage.setItem("lname", lname);

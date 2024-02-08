@@ -1,193 +1,106 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Currency formatting handlers
+  document.querySelectorAll("input[data-type='currency']").forEach((input) => {
+    input.addEventListener("keyup", () => formatCurrency(input));
+    input.addEventListener("blur", () => formatCurrency(input, "blur"));
+  });
 
-$("input[data-type='currency']").on({
-  keyup: function () {
-    formatCurrency($(this));
-  },
-  blur: function () {
-    formatCurrency($(this), "blur");
-  },
-});
-
-function formatNumber(n) {
-  // format number 1000000 to 1,234,567
-  return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function formatCurrency(input, blur) {
-  // appends $ to value, validates decimal side
-  // and puts cursor back in the right position.
-
-  // get input value
-  var input_val = input.val();
-
-  // don't validate empty input
-  if (input_val === "") {
-    return;
+  function formatNumber(n) {
+    return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  // original length
-  var original_len = input_val.length;
-
-  // initial caret position
-  var caret_pos = input.prop("selectionStart");
-
-  // check for decimal
-  if (input_val.indexOf(".") >= 0) {
-    // get position of the first decimal
-    // this prevents multiple decimals from
-    // being entered
-    var decimal_pos = input_val.indexOf(".");
-
-    // split number by decimal point
-    var left_side = input_val.substring(0, decimal_pos);
-    var right_side = input_val.substring(decimal_pos);
-
-    // add commas to the left side of the number
-    left_side = formatNumber(left_side);
-
-    // validate the right side
-    right_side = formatNumber(right_side);
-
-    // On blur make sure 2 numbers after decimal
-    if (blur === "blur") {
-      right_side += "00";
+  function formatCurrency(input, blur = false) {
+    let input_val = input.value;
+    if (input_val === "") {
+      return;
     }
 
-    // Limit decimal to only 2 digits
-    right_side = right_side.substring(0, 2);
+    let original_len = input_val.length;
+    let caret_pos = input.selectionStart;
 
-    // join the number by .
-    input_val = "$" + left_side + "." + right_side;
-  } else {
-    // no decimal entered
-    // add commas to the number
-    // remove all non-digits
-    input_val = formatNumber(input_val);
-    input_val = "$" + input_val;
+    if (input_val.indexOf(".") >= 0) {
+      let decimal_pos = input_val.indexOf(".");
+      let left_side = input_val.substring(0, decimal_pos);
+      let right_side = input_val.substring(decimal_pos);
 
-    // final formatting
-    if (blur === "blur") {
-      input_val += ".00";
+      left_side = formatNumber(left_side);
+      right_side = formatNumber(right_side);
+      if (blur) {
+        right_side += "00";
+      }
+
+      right_side = right_side.substring(0, 2);
+      input_val = "$" + left_side + "." + right_side;
+    } else {
+      input_val = formatNumber(input_val);
+      input_val = "$" + input_val;
+      if (blur) {
+        input_val += ".00";
+      }
     }
+
+    input.value = input_val.substring(0, 8);
+
+    let updated_len = input_val.length;
+    caret_pos = updated_len - original_len + caret_pos;
+    input.setSelectionRange(caret_pos, caret_pos);
   }
 
-  // Limit input value length to 8 digits
-  input_val = input_val.substring(0, 8);
+  // Image preview functionality
+  document.querySelectorAll("input[type='file']").forEach((input) => {
+    input.addEventListener("change", function () {
+      previewImage(input);
+    });
+  });
 
-  // send the updated string to input
-  input.val(input_val);
-
-  // put the caret back in the right position
-  var updated_len = input_val.length;
-  caret_pos = updated_len - original_len + caret_pos;
-  input[0].setSelectionRange(caret_pos, caret_pos);
-}
-
-function previewImage(input) {
-  var preview = document.getElementById("upload-preview");
-  var file = input.files[0];
-  var reader = new FileReader();
-
-  reader.onload = function (e) {
-    preview.src = e.target.result;
-  };
-
-  if (file) {
-    reader.readAsDataURL(file);
+  function previewImage(input) {
+    let file = input.files[0];
+    if (file) {
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        let preview = document.createElement("img");
+        preview.src = e.target.result;
+        preview.style.maxWidth = "200px";
+        document.body.appendChild(preview);
+      };
+      reader.readAsDataURL(file);
+    }
   }
-}
+  // Post task functionality using Fetch API
+  document.querySelector(".post-task").addEventListener("click", function () {
+    let taskData = {
+      datePosted: new Date(),
+      title: document.getElementById("title").value,
+      description: document.getElementById("description").value,
+      dueDate: new Date(document.getElementById("date").value),
+      pay: parseFloat(
+        document.getElementById("currencyfield").value.replace("$", "")
+      ), // Convert string to number
+      location: document.getElementById("loc").value,
+      category: document.getElementById("category").value,
+    };
 
-document
-  .getElementById("upload-container")
-  .addEventListener("click", function () {
-    document.getElementById("file-input").click();
-  });
+    console.log("Sending task data to server:", taskData);
 
-document
-  .getElementById("upload-container1")
-  .addEventListener("click", function () {
-    document.getElementById("file-input1").click();
-  });
-
-document
-  .getElementById("upload-container2")
-  .addEventListener("click", function () {
-    document.getElementById("file-input2").click();
-  });
-
-document.addEventListener('DOMContentLoaded', function () {
-  function handleEdit(input) {
-    input.style.display = "block";
-    input.focus();
-  }
-
-  var locInput = document.getElementById("loc");
-  locInput.addEventListener("click", function() {
-    handleEdit(locInput);
-  });
-  locInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      locInput.blur();
-    }
-  });
-
-  var detailsInput = document.getElementById("details");
-  detailsInput.addEventListener("click", function() {
-    handleEdit(detailsInput);
-  });
-  detailsInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      detailsInput.blur();
-    }
-  });
-
-  var timeInput = document.getElementById("time");
-  timeInput.addEventListener("click", function() {
-    handleEdit(timeInput);
-  });
-  timeInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      timeInput.blur();
-    }
-  });
-
-  var dateInput = document.getElementById("date");
-  dateInput.addEventListener("click", function() {
-    handleEdit(dateInput);
-  });
-  dateInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      dateInput.blur();
-    }
-  });
-
-  var categoryInput = document.getElementById("category");
-  categoryInput.addEventListener("click", function() {
-    handleEdit(categoryInput);
-  });
-  categoryInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      categoryInput.blur();
-    }
+    fetch("/api/tasks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(taskData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Task posted successfully:", data);
+        window.location.href = "/my-tasks"; // Redirect on success
+      })
+      .catch((error) => {
+        console.error("Error posting task:", error);
+      });
   });
 });
-
-const email = localStorage.getItem("logged-email");
-console.log(email);
-// Fetch user details
-fetch(`/api/users/profile/${email}`)
-  .then((response) => response.json())
-  .then((user) => {
-    console.log(user);
-    const browse = document.getElementById("browse");
-    if (user.seeker === true) {
-      browse.addEventListener("click", function () {
-        window.location.href = "/browse-task";
-      });
-    } else if (user.seeker === false) {
-      browse.addEventListener("click", function () {
-        window.location.href = "/browse-task1";
-      });
-    }
-  })
-  .catch((error) => console.error("Error fetching user details:", error));
