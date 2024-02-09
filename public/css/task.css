@@ -66,6 +66,9 @@ b:visited {
   height: 55px;
   object-fit: cover;
 }
+.blank-profile-picture-973460-1-icon:hover {
+  cursor: pointer;
+}
 .home-parent {
   position: absolute;
   top: 44px;

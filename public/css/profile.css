@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.blank-profile-picture-973460-1-icon:hover {
+  cursor: pointer;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;

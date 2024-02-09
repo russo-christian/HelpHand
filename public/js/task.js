@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const profileIcon = document.getElementById("profile-icon");
+  profileIcon.addEventListener("click", function () {
+    window.location.href = "/profile";
+  });
+
   // Currency formatting handlers
   document.querySelectorAll("input[data-type='currency']").forEach((input) => {
     input.addEventListener("keyup", () => formatCurrency(input));
@@ -96,8 +101,22 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then((data) => {
+        const email = localStorage.getItem("logged-email");
+
         console.log("Task posted successfully:", data);
-        window.location.href = "/my-tasks"; // Redirect on success
+        fetch(`/api/users/profile/${email}`)
+          .then((response) => response.json())
+          .then((user) => {
+            console.log(user);
+            if (user.seeker === true) {
+              window.location.href = "/browse-task";
+            } else if (user.seeker === false) {
+              window.location.href = "/browse-task1";
+            }
+          })
+          .catch((error) =>
+            console.error("Error fetching user details:", error)
+          );
       })
       .catch((error) => {
         console.error("Error posting task:", error);
